@@ -92,7 +92,7 @@ do_debug_gdb_build() {
             cross_extra_config+=("--disable-nls")
         fi
 
-        CC_for_gdb="${CT_HOST}-gcc ${CT_CFLAGS_FOR_HOST} ${CT_LDFLAGS_FOR_HOST}"
+        CC_for_gdb="${CT_HOST}-gcc ${CT_CFLAGS_FOR_HOST} ${CT_LDFLAGS_FOR_HOST} -Qunused-arguments"
         LD_for_gdb="${CT_HOST}-ld ${CT_LDFLAGS_FOR_HOST}"
         if [ "${CT_GDB_CROSS_STATIC}" = "y" ]; then
             CC_for_gdb+=" -static"
