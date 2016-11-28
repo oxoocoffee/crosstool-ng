@@ -1,0 +1,12 @@
+diff -urN dmalloc-5.5.2/configure dmalloc-5.5.2.corrupted/configure
+--- dmalloc-5.5.2/configure	2016-11-09 23:19:17.854157147 +0300
++++ dmalloc-5.5.2.corrupted/configure	2016-11-09 23:27:08.307206461 +0300
+@@ -4424,7 +4424,7 @@
+ 	# Darwin/Mac OS X - Terry Teague
+ 	# username terry_teague at domain users.sourceforge.net
+ 	ac_cv_shared_lib_link_objs=no
+-	if test `uname` = "Darwin"; then
++	if false; then
+           if (${LD} -dylib -o conftest.so.t -lc conftest.a) 2>&5; then
+             # By convention on some platforms
+             # libLLL.so, libLLL.X.so are symlinks to libLLL.X.Y.Z.so
