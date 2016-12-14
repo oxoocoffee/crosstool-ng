@@ -1,0 +1,26 @@
+diff -urN gdb-7.11.orig/libiberty/fibheap.c gdb-7.11/libiberty/fibheap.c
+--- gdb-7.11.orig/libiberty/fibheap.c	2014-06-11 20:34:41.000000000 +0400
++++ gdb-7.11/libiberty/fibheap.c	2016-11-05 00:16:13.107655737 +0300
+@@ -35,6 +35,22 @@
+ #include "fibheap.h"
+ 
+ 
++/* FIXME: It'd be nice to configure around these, but the include files are too
++   painful.  These macros should at least be more portable than hardwired hex
++   constants. */
++
++#ifndef ULONG_MAX
++#define	ULONG_MAX	((unsigned long)(~0L))		/* 0xFFFFFFFF */
++#endif
++
++#ifndef LONG_MAX
++#define	LONG_MAX	((long)(ULONG_MAX >> 1))	/* 0x7FFFFFFF */
++#endif
++
++#ifndef LONG_MIN
++#define	LONG_MIN	((long)(~LONG_MAX))		/* 0x80000000 */
++#endif
++
+ #define FIBHEAPKEY_MIN	LONG_MIN
+ 
+ static void fibheap_ins_root (fibheap_t, fibnode_t);
